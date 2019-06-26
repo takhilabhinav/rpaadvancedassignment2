@@ -1,0 +1,589 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Flowchart1" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="654,716" sap2010:WorkflowViewState.IdRef="Flowchart1_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="21">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="16">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Flowchart DisplayName="Flowchart1" sap:VirtualizedContainerService.HintSize="614,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+      <Variable x:TypeArguments="sd:DataTable" Name="read_dt" />
+      <Variable x:TypeArguments="ui:Browser" Name="browser" />
+      <Variable x:TypeArguments="x:String" Name="taxid" />
+      <Variable x:TypeArguments="x:String" Name="DownloadPath" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">0,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">60,40 90,40 90,50 150,50</av:PointCollection>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <x:Reference>__ReferenceID4</x:Reference>
+    </Flowchart.StartNode>
+    <FlowStep x:Name="__ReferenceID4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">150,24.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">350,50 400,50</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:OpenBrowser BrowserType="Firefox" DisplayName="Open Browser" Hidden="False" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Private="False" UiBrowser="[browser]" Url="https://acme-test.uipath.com/account/login">
+        <ui:OpenBrowser.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="336,890" sap2010:WorkflowViewState.IdRef="Sequence_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into " EmptyField="False" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="takhilabhinav@gmail.com">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="b761ac4790769751058701d0dd28f314" Selector="&lt;webctrl id='email' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  password'" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="False" Text="python06@12">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="14e6efd8944e7c9d91973781927b2e0d" Selector="&lt;webctrl id='password' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,116" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="tab" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                <ui:SendHotkey.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+                </ui:SendHotkey.Target>
+              </ui:SendHotkey>
+              <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,116" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="enter" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                <ui:SendHotkey.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+                </ui:SendHotkey.Target>
+              </ui:SendHotkey>
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="9e828d13c18d99a66b06da4f6da047e5" Selector="&lt;webctrl aaname=' &#x9;&#x9;&#x9;&#x9;&#x9; Work Items' parentid='dashmenu' tag='BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:Click.Target>
+              </ui:Click>
+            </Sequence>
+          </ActivityAction>
+        </ui:OpenBrowser.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:OpenBrowser>
+      <FlowStep.Next>
+        <FlowStep x:Name="__ReferenceID0">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">400,24.5</av:Point>
+              <av:Size x:Key="ShapeSize">200,51</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">500,75.5 500,105.5 470,105.5 470,134.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Firefox" DisplayName="Attach Browser 'ACMESyste Page'" sap:VirtualizedContainerService.HintSize="414,376" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="b5ccbff568152f608563abb50a768389" Selector="&lt;html app='firefox.exe' title='ACME System 1 - Work Items' /&gt;">
+              <ui:BrowserScope.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="336,230" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ExtractData ContinueOnError="True" DataTable="[ExtractDataTable]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'TABLE'" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' /&gt;" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="100" NextLinkSelector="&lt;webctrl aaname='&amp;gt;' tag='A' /&gt;">
+                      <ui:ExtractData.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="06e00c2aba3619ed3f841b1a397c0a9c" Selector="&lt;webctrl tag='TABLE' /&gt;" WaitForReady="COMPLETE" />
+                      </ui:ExtractData.Target>
+                    </ui:ExtractData>
+                  </Sequence>
+                </ActivityAction>
+              </ui:BrowserScope.Body>
+            </ui:BrowserScope>
+          </Sequence>
+          <FlowStep.Next>
+            <FlowStep x:Name="__ReferenceID1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">370,134.5</av:Point>
+                  <av:Size x:Key="ShapeSize">200,51</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">370,160 340,160 340,140 250,140</av:PointCollection>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="C:\Users\dell\Desktop\acme\acme.xlsx">
+                <ui:ExcelApplicationScope.Body>
+                  <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:ExcelWriteRange AddHeaders="True" DataTable="[ExtractDataTable]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet1" StartingCell="A1">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:ExcelWriteRange>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ExcelApplicationScope.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:ExcelApplicationScope>
+              <FlowStep.Next>
+                <FlowStep x:Name="__ReferenceID2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">50,114.5</av:Point>
+                      <av:Size x:Key="ShapeSize">200,51</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">150,165.5 150,260 370,260</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" WorkbookPath="acme.xlsx">
+                    <ui:ExcelApplicationScope.Body>
+                      <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="336,183" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:ExcelReadRange AddHeaders="True" DataTable="[read_dt]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Sheet1">
+                            <ui:ExcelReadRange.Range>
+                              <InArgument x:TypeArguments="x:String">
+                                <Literal x:TypeArguments="x:String" Value="" />
+                              </InArgument>
+                            </ui:ExcelReadRange.Range>
+                          </ui:ExcelReadRange>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ExcelApplicationScope.Body>
+                  </ui:ExcelApplicationScope>
+                  <FlowStep.Next>
+                    <FlowStep x:Name="__ReferenceID3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">370,234.5</av:Point>
+                          <av:Size x:Key="ShapeSize">200,51</av:Size>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[read_dt]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1022,5047" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                        <ui:ForEachRow.Body>
+                          <ActivityAction x:TypeArguments="sd:DataRow">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="992,4899" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <If Condition="[row(3).ToString.Contains(&quot;WI4&quot;)]" sap:VirtualizedContainerService.HintSize="970,4775" sap2010:WorkflowViewState.IdRef="If_2">
+                                <If.Then>
+                                  <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Firefox" DisplayName="Attach Browser 'firefox.exe ACME'" sap:VirtualizedContainerService.HintSize="845,4627" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="c62b311c0a5a42aef3856020dde59aa7" Selector="&lt;html app='firefox.exe' title='ACME System 1 -*' /&gt;">
+                                    <ui:BrowserScope.Body>
+                                      <ActivityAction x:TypeArguments="x:Object">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                        </ActivityAction.Argument>
+                                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="831,4481" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                          <Sequence.Variables>
+                                            <Variable x:TypeArguments="x:String" Name="retrivestr" />
+                                            <Variable x:TypeArguments="x:Int32" Name="num" />
+                                            <Variable x:TypeArguments="s:String[]" Name="searchstr" />
+                                          </Sequence.Variables>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="809,59" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[&quot;https://acme-test.uipath.com/work-items/&quot;+row(1).ToString]" />
+                                          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'P'" sap:VirtualizedContainerService.HintSize="809,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                                            <ui:GetValue.Target>
+                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="8290c270e572ae0006a56400a88ab35e" Selector="&lt;webctrl idx='1' tag='P' /&gt;" WaitForReady="INTERACTIVE" />
+                                            </ui:GetValue.Target>
+                                            <ui:GetValue.Value>
+                                              <OutArgument x:TypeArguments="x:String">[retrivestr]</OutArgument>
+                                            </ui:GetValue.Value>
+                                          </ui:GetValue>
+                                          <Assign sap:VirtualizedContainerService.HintSize="809,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="s:String[]">[searchstr]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="s:String[]">[retrivestr.Split({":"},StringSplitOptions.RemoveEmptyEntries)]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <Assign sap:VirtualizedContainerService.HintSize="809,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[taxid]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[searchstr(1).Replace("Name"," ").Trim.ToString]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="809,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[taxid]" TopMost="True" />
+                                          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Firefox" DisplayName="Attach Browser 'firefox.exe ACME'" sap:VirtualizedContainerService.HintSize="809,3813" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="57c5c30537dad2a588884dab7ed5691f" Selector="&lt;html app='firefox.exe' title='ACME System 1 - *' /&gt;">
+                                            <ui:BrowserScope.Body>
+                                              <ActivityAction x:TypeArguments="x:Object">
+                                                <ActivityAction.Argument>
+                                                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                                </ActivityAction.Argument>
+                                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="795,3667" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                                  <Sequence.Variables>
+                                                    <Variable x:TypeArguments="s:String[]" Name="months" />
+                                                  </Sequence.Variables>
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:NavigateTo Browser="[browser]" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="773,59" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="https://acme-test.uipath.com/reports/download" />
+                                                  <Assign sap:VirtualizedContainerService.HintSize="773,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[DownloadPath]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[Directory.GetCurrentDirectory+"\Data\MonthlyReport\"+taxid]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Directory" sap:VirtualizedContainerService.HintSize="773,22" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[DownloadPath]" />
+                                                  <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  vendorTaxID'" EmptyField="False" sap:VirtualizedContainerService.HintSize="773,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="False" SimulateType="False" Text="[taxid]">
+                                                    <ui:TypeInto.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="649b89732419a8e542c2cb3293fc20f2" Selector="&lt;webctrl tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                                                    </ui:TypeInto.Target>
+                                                  </ui:TypeInto>
+                                                  <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Items="{x:Null}" DisplayName="Select Item 'BUTTON'" sap:VirtualizedContainerService.HintSize="773,96" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="2018">
+                                                    <ui:SelectItem.Target>
+                                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;webctrl id='reportYear' /&gt;" WaitForReady="INTERACTIVE" />
+                                                    </ui:SelectItem.Target>
+                                                  </ui:SelectItem>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="773,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="s:String[]">[months]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="s:String[]">[{"January","February","March","April","May","June","July","August","September","October","November","December"}]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="773,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:Int32">[num]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:Int32">1</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="773,2775" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[months]">
+                                                    <ui:ForEach.Body>
+                                                      <ActivityAction x:TypeArguments="x:String">
+                                                        <ActivityAction.Argument>
+                                                          <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+                                                        </ActivityAction.Argument>
+                                                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="757,2641" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                                          <Sequence.Variables>
+                                                            <Variable x:TypeArguments="x:Boolean" Name="popexists" />
+                                                          </Sequence.Variables>
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Items="{x:Null}" DisplayName="Select Item 'BUTTON'" sap:VirtualizedContainerService.HintSize="735,96" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="[item]">
+                                                            <ui:SelectItem.Target>
+                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;webctrl id='reportMonth' /&gt;" WaitForReady="INTERACTIVE" />
+                                                            </ui:SelectItem.Target>
+                                                          </ui:SelectItem>
+                                                          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  buttonDownload'" sap:VirtualizedContainerService.HintSize="735,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                                            <ui:Click.CursorPosition>
+                                                              <ui:CursorPosition Position="Center">
+                                                                <ui:CursorPosition.OffsetX>
+                                                                  <InArgument x:TypeArguments="x:Int32" />
+                                                                </ui:CursorPosition.OffsetX>
+                                                                <ui:CursorPosition.OffsetY>
+                                                                  <InArgument x:TypeArguments="x:Int32" />
+                                                                </ui:CursorPosition.OffsetY>
+                                                              </ui:CursorPosition>
+                                                            </ui:Click.CursorPosition>
+                                                            <ui:Click.Target>
+                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="8120bb9913791b445569de666842c119" Selector="&lt;webctrl id='buttonDownload' tag='BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
+                                                            </ui:Click.Target>
+                                                          </ui:Click>
+                                                          <ui:ImageFound Found="{x:Null}" DisplayName="Image Exists 'firefox.exe ACME'" sap:VirtualizedContainerService.HintSize="735,106" sap2010:WorkflowViewState.IdRef="ImageFound_1">
+                                                            <ui:ImageFound.Image>
+                                                              <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="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" />
+                                                            </ui:ImageFound.Image>
+                                                            <ui:ImageFound.Target>
+                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                                                            </ui:ImageFound.Target>
+                                                          </ui:ImageFound>
+                                                          <If Condition="[popexists]" sap:VirtualizedContainerService.HintSize="735,2041" sap2010:WorkflowViewState.IdRef="If_1">
+                                                            <If.Then>
+                                                              <Sequence sap:VirtualizedContainerService.HintSize="336,230" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'firefox.exe ACME'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False">
+                                                                  <ui:ClickImage.CursorPosition>
+                                                                    <ui:CursorPosition Position="Center">
+                                                                      <ui:CursorPosition.OffsetX>
+                                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                                      </ui:CursorPosition.OffsetX>
+                                                                      <ui:CursorPosition.OffsetY>
+                                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                                      </ui:CursorPosition.OffsetY>
+                                                                    </ui:CursorPosition>
+                                                                  </ui:ClickImage.CursorPosition>
+                                                                  <ui:ClickImage.Image>
+                                                                    <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEcAAAASCAYAAAAJ88NbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGmSURBVFhH7ZZLboJQFIbPcjBhDa3twHYqI9xCdyA6FDfhY+xjDWqcVxFjKdG4AjUItgPbwd8DWnJVOvSaJgy+5Jz/nDvgC9xAuVcfL8s9giBIEQid0PP7d+IwJTjI8X0/JYFIzna7TUmAnpwveJ4nFbuqgohiCl1hblehUgFdYd/zbFRV3i10hez6RHI2m400LJPFqCasOOtAZ0GqaR16y2Q5Ojrx3ILJYvTOby8PyXJCEeKDHxGFnMi5nZgQyjl7rNdrObR1fmsqGF/MxqiEEtpcjyuRnLaYXezLgXJve6xWKzm0WI7eSpy1dBbR4noUylGhhndMeCf9sS8DerQ/sVwu5dDUQFozYTZEOUPQmlwPy8iwlEx5yHkTWlyfn7k+9DD5wGKxkESDH1ZD4zwflFjIMRfruM+gNDj2EonkzOdzafQNhT+XPOpxVkee3w7F6B/6vgHlZH48oxjoC5kMKDvZwXVdudTyJ/85+Zow6xUjOTVx3+2hqPCuUkTvJL8ut5HzT6CstYPjOCkJ0P04wGw2S0kgkjOdTlMSoLuRD9u2Uy6w8QNPRrgemGGIkgAAAABJRU5ErkJggg==" />
+                                                                  </ui:ClickImage.Image>
+                                                                  <ui:ClickImage.Target>
+                                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+                                                                  </ui:ClickImage.Target>
+                                                                </ui:ClickImage>
+                                                              </Sequence>
+                                                            </If.Then>
+                                                            <If.Else>
+                                                              <Sequence sap:VirtualizedContainerService.HintSize="374,1893" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                                                <Sequence.Variables>
+                                                                  <Variable x:TypeArguments="x:String" Name="uploadpath" />
+                                                                  <Variable x:TypeArguments="s:String[]" Name="filestoprocess" />
+                                                                  <Variable x:TypeArguments="sd:DataTable" Name="monthlyreportdt" />
+                                                                  <Variable x:TypeArguments="x:String" Name="out_dt" />
+                                                                  <Variable x:TypeArguments="x:String" Name="Yearlypath" />
+                                                                  <Variable x:TypeArguments="x:String" Name="variable1" />
+                                                                </Sequence.Variables>
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'radio button  Save File'" sap:VirtualizedContainerService.HintSize="352,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                                                  <ui:Click.CursorPosition>
+                                                                    <ui:CursorPosition Position="Center">
+                                                                      <ui:CursorPosition.OffsetX>
+                                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                                      </ui:CursorPosition.OffsetX>
+                                                                      <ui:CursorPosition.OffsetY>
+                                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                                      </ui:CursorPosition.OffsetY>
+                                                                    </ui:CursorPosition>
+                                                                  </ui:Click.CursorPosition>
+                                                                  <ui:Click.Target>
+                                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="4c2a3d6a70dd351712e3d9e7a00a4a01" Selector="&lt;wnd app='firefox.exe' cls='MozillaDialogClass' title='Opening Report-DE987564-2.csv' /&gt;&lt;ctrl name='What should Firefox do with this file?' role='grouping' /&gt;&lt;ctrl name='Save File' role='radio button' /&gt;" WaitForReady="INTERACTIVE" />
+                                                                  </ui:Click.Target>
+                                                                </ui:Click>
+                                                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  OK'" sap:VirtualizedContainerService.HintSize="352,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                                                  <ui:Click.CursorPosition>
+                                                                    <ui:CursorPosition Position="Center">
+                                                                      <ui:CursorPosition.OffsetX>
+                                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                                      </ui:CursorPosition.OffsetX>
+                                                                      <ui:CursorPosition.OffsetY>
+                                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                                      </ui:CursorPosition.OffsetY>
+                                                                    </ui:CursorPosition>
+                                                                  </ui:Click.CursorPosition>
+                                                                  <ui:Click.Target>
+                                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="3314eb2649c5a21f658bf0ef7cc19e4c" Selector="&lt;wnd app='firefox.exe' cls='MozillaDialogClass' title='Opening Report-DE987564-2.csv' /&gt;&lt;ctrl name='OK' role='push button' /&gt;" WaitForReady="INTERACTIVE" />
+                                                                  </ui:Click.Target>
+                                                                </ui:Click>
+                                                                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'Edit'" EmptyField="False" sap:VirtualizedContainerService.HintSize="352,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" SendWindowMessages="False" SimulateType="False" Text="[DownloadPath+&quot;\&quot;+taxid+&quot;-&quot;+num.ToString]">
+                                                                  <ui:TypeInto.Target>
+                                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="10b8366cfd3bff38547a385fff206182" Selector="&lt;wnd app='firefox.exe' cls='#32770' title='Enter name of file to save to…' /&gt;&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" WaitForReady="INTERACTIVE" />
+                                                                  </ui:TypeInto.Target>
+                                                                </ui:TypeInto>
+                                                                <Assign sap:VirtualizedContainerService.HintSize="352,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                                                  <Assign.To>
+                                                                    <OutArgument x:TypeArguments="x:Int32">[num]</OutArgument>
+                                                                  </Assign.To>
+                                                                  <Assign.Value>
+                                                                    <InArgument x:TypeArguments="x:Int32">[num+1]</InArgument>
+                                                                  </Assign.Value>
+                                                                </Assign>
+                                                                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="352,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                                                                  <ui:Click.CursorPosition>
+                                                                    <ui:CursorPosition Position="Center">
+                                                                      <ui:CursorPosition.OffsetX>
+                                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                                      </ui:CursorPosition.OffsetX>
+                                                                      <ui:CursorPosition.OffsetY>
+                                                                        <InArgument x:TypeArguments="x:Int32" />
+                                                                      </ui:CursorPosition.OffsetY>
+                                                                    </ui:CursorPosition>
+                                                                  </ui:Click.CursorPosition>
+                                                                  <ui:Click.Target>
+                                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="027648c54a30fe46fc8f2c59e5d90642" Selector="&lt;wnd app='firefox.exe' cls='#32770' title='Enter name of file to save to…' /&gt;&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;" WaitForReady="INTERACTIVE" />
+                                                                  </ui:Click.Target>
+                                                                </ui:Click>
+                                                                <Assign sap:VirtualizedContainerService.HintSize="352,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                                                  <Assign.To>
+                                                                    <OutArgument x:TypeArguments="x:String">[uploadpath]</OutArgument>
+                                                                  </Assign.To>
+                                                                  <Assign.Value>
+                                                                    <InArgument x:TypeArguments="x:String">[Directory.GetCurrentDirectory+"\Data\YearlyReport\"+taxid]</InArgument>
+                                                                  </Assign.Value>
+                                                                </Assign>
+                                                                <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Directory" sap:VirtualizedContainerService.HintSize="352,22" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[uploadpath]" />
+                                                                <Assign sap:VirtualizedContainerService.HintSize="352,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                                                  <Assign.To>
+                                                                    <OutArgument x:TypeArguments="s:String[]">[filestoprocess]</OutArgument>
+                                                                  </Assign.To>
+                                                                  <Assign.Value>
+                                                                    <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(Downloadpath)]</InArgument>
+                                                                  </Assign.Value>
+                                                                </Assign>
+                                                                <ui:BuildDataTable DataTable="[monthlyreportdt]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="352,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;InvoiceNumber&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Item&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Amount&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Tax&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Total&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Currency&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+                                                                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="352,379" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[filestoprocess]">
+                                                                  <ui:ForEach.Body>
+                                                                    <ActivityAction x:TypeArguments="x:String">
+                                                                      <ActivityAction.Argument>
+                                                                        <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+                                                                      </ActivityAction.Argument>
+                                                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="336,245" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                                                        <Sequence.Variables>
+                                                                          <Variable x:TypeArguments="sd:DataTable" Name="csvdt" />
+                                                                        </Sequence.Variables>
+                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                          </scg:Dictionary>
+                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                        <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[csvdt]" Delimitator="Comma" DisplayName="Read CSV" FilePath="[item]" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
+                                                                        <ui:MergeDataTable Destination="[monthlyreportdt]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="MergeDataTable_1" MissingSchemaAction="Add" Source="[csvdt]" />
+                                                                      </Sequence>
+                                                                    </ActivityAction>
+                                                                  </ui:ForEach.Body>
+                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                    </scg:Dictionary>
+                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                </ui:ForEach>
+                                                                <ui:OutputDataTable DataTable="[monthlyreportdt]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="352,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[out_dt]" />
+                                                                <Assign sap:VirtualizedContainerService.HintSize="352,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                                                  <Assign.To>
+                                                                    <OutArgument x:TypeArguments="x:String">[Yearlypath]</OutArgument>
+                                                                  </Assign.To>
+                                                                  <Assign.Value>
+                                                                    <InArgument x:TypeArguments="x:String">[uploadpath+"\Yearly-Report-2018"+taxid+".xlsx"]</InArgument>
+                                                                  </Assign.Value>
+                                                                </Assign>
+                                                                <ui:WriteRange AddHeaders="True" DataTable="[monthlyreportdt]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="352,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[Yearlypath]" />
+                                                              </Sequence>
+                                                            </If.Else>
+                                                          </If>
+                                                        </Sequence>
+                                                      </ActivityAction>
+                                                    </ui:ForEach.Body>
+                                                  </ui:ForEach>
+                                                </Sequence>
+                                              </ActivityAction>
+                                            </ui:BrowserScope.Body>
+                                          </ui:BrowserScope>
+                                        </Sequence>
+                                      </ActivityAction>
+                                    </ui:BrowserScope.Body>
+                                  </ui:BrowserScope>
+                                </If.Then>
+                              </If>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:ForEachRow.Body>
+                      </ui:ForEachRow>
+                    </FlowStep>
+                  </FlowStep.Next>
+                </FlowStep>
+              </FlowStep.Next>
+            </FlowStep>
+          </FlowStep.Next>
+        </FlowStep>
+      </FlowStep.Next>
+    </FlowStep>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID3</x:Reference>
+  </Flowchart>
+</Activity>
